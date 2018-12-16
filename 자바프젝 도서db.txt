@@ -1,0 +1,57 @@
+fields terminated by ',' 
+lines terminated by '\n'
+ignore 1 rows;
+
+create table BookDB(
+	Num int(4) default 0 primary key,
+	Name varchar(100) not null,
+	Writer varchar(30) not null,
+	Publisher varchar(50) not null,
+	Genre varchar(10) not null,
+	BookRent char(1) default 'Y'
+);
+
+
+create table History(
+	phoneNum varchar(30) not null,
+	bookNum int(4) default 0,
+	info varchar(10)
+);
+
+insert into bookdb (Num, Name, Writer, Publisher, Genre, BookRent ) values (1,'천년의 금서 :김진명 장편소설','김진명' ,'새움','장편소설','Y');
+
+create table TB_MEMBER(
+	name varchar(30) not null,
+	phone varchar(20) not null primary key,
+	rentcount int(4) not null
+);
+
+create table Rent(
+	phoneNum varchar(30) not null,
+	bookNum int(4) not null
+);
+
+insert into bookdb (Num, Name, Writer, Publisher, Genre, BookRent ) values (1,'천년의 금서 :김진명 장편소설','김진명' ,'새움','장편소설','Y');
+insert into bookdb (Num, Name, Writer, Publisher, Genre, BookRent ) values (2,'완득이 :김려령 장편소설','김려령','창비','장편소설','Y');
+insert into bookdb (Num, Name, Writer, Publisher, Genre, BookRent ) values (3,'성녀의 구제','히가시노 게이고','재인','장르소설','Y');
+insert into bookdb (Num, Name, Writer, Publisher, Genre, BookRent ) values (4,'돈으로 살 수 없는 것들 : 무엇이 가치를 결정하는가','마이클 샌델','와이즈베리','경제','Y');
+insert into bookdb (Num, Name, Writer, Publisher, Genre, BookRent ) values (5,'정의란 무엇인가','마이클 샌델','김영사','철학','Y');
+insert into bookdb (Num, Name, Writer, Publisher, Genre, BookRent ) values (6,'조선 왕을 말하다 :이덕일 역사평설','이덕일','위즈덤하우스','역사','Y');
+insert into bookdb (Num, Name, Writer, Publisher, Genre, BookRent ) values (7,'줄서는 맛집 :서울 편','황광해','토트','여행','Y');
+insert into bookdb (Num, Name, Writer, Publisher, Genre, BookRent ) values (8,'국혼 :이지환 장편소설','이지환','신영미디어','장편소설','Y');
+insert into bookdb (Num, Name, Writer, Publisher, Genre, BookRent ) values (9,'서울 시','하상욱','중앙북스','경제','Y');
+insert into bookdb (Num, Name, Writer, Publisher, Genre, BookRent ) values (10,'채소의 기분 바다표범의 키스','무라카미 하루키','비채','장르소설','Y');
+insert into bookdb (Num, Name, Writer, Publisher, Genre, BookRent ) values (11,'갈릴레오의 고뇌','히가시노 게이고','재인','철학','Y');
+insert into bookdb (Num, Name, Writer, Publisher, Genre, BookRent ) values (12,'어디선가 나를 찾는 전화벨이 울리고 :신경숙 장편소설','신경숙','문학동네','장편소설','Y');
+insert into bookdb (Num, Name, Writer, Publisher, Genre, BookRent ) values (15,'웃음','베르나르 베르베르','열린책들','장편소설','Y');
+
+
+
+update bookdb set bookrent='Y' where bookrent like 'N';
+delete from rent;
+delete from history;
+
+
+
+
+
